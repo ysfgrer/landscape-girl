@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Girl xoxo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgPink: '#fff7fb',
+                        primaryPink: '#f472b6',
+                        darkPink: '#db2777',
+                        textDark: '#1f1f1f',
+                        softPink: '#fbcfe8',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'Cambria', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fff7fb;
+            color: #1f1f1f;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Custom text selection color */
+        ::selection {
+            background: #fbcfe8;
+            color: #db2777;
+        }
+
+        /* Editorial drop cap for the first letter of articles */
+        .editorial-p::first-letter {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #db2777;
+            float: left;
+            line-height: 1;
+            padding-right: 0.5rem;
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+        }
+
+        /* Magazine style thin borders */
+        .mag-border {
+            border: 1px solid #fbcfe8;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- NAVIGATION / TOP BAR -->
+    <nav class="w-full border-b border-softPink py-3 px-6 flex justify-between items-center sticky top-0 bg-bgPink/90 backdrop-blur-sm z-50">
+        <div class="font-bold tracking-widest uppercase text-xs text-darkPink">Landscape Girl</div>
+        <div class="font-serif italic text-primaryPink font-medium">xoxo</div>
+        <div class="font-bold tracking-widest uppercase text-xs text-darkPink">Midterm Ed.</div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+        
+        <!-- HEADER / MAGAZINE COVER SECTION -->
+        <header class="mb-24 border-b-4 border-darkPink pb-12">
+            <h1 class="text-6xl md:text-[8rem] font-black tracking-tighter text-textDark uppercase leading-none mb-4 flex flex-col">
+                <span>Landscape</span>
+                <span class="text-primaryPink flex items-baseline gap-4">
+                    Girl 
+                    <span class="text-4xl md:text-7xl lowercase italic font-serif text-darkPink font-medium">xoxo</span>
+                </span>
+            </h1>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-darkPink pt-6">
+                <div class="md:col-span-5">
+                    <p class="text-xl md:text-2xl font-bold uppercase tracking-tight text-darkPink leading-snug">
+                        Weekly sightings from the professional side of landscape architecture.
+                    </p>
+                </div>
+                <div class="md:col-span-7 flex flex-col gap-6 text-lg">
+                    <p class="font-medium text-textDark">
+                        Not class notes. Not gossip exactly. <br>
+                        Just professional plot twists, studio impressions, and the stories that linger.
+                    </p>
+                    <div class="bg-white p-6 mag-border shadow-sm">
+                        <p class="text-sm uppercase tracking-widest text-primaryPink font-bold mb-2">About the author</p>
+                        <p class="font-serif italic text-textDark leading-relaxed">
+                            Landscape Girl is an observer, not a narrator. She collects what lingers after the talk is over, decoding the unwritten rules of the studio and the reality checks of the profession.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT / BLOG POSTS -->
+        <main class="grid grid-cols-1 gap-20">
+
+            <!-- POST 1: Çisem Demirel Koyun -->
+            <article class="relative pl-0 md:pl-12">
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-softPink hidden md:block"></div>
+                
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="bg-primaryPink text-white font-black uppercase tracking-[0.2em] text-sm px-4 py-2">Spotted:</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-textDark tracking-tight">Çisem Demirel Koyun</h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">the queen</span>
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">studio note</span>
+                </div>
+
+                <h3 class="font-serif italic text-darkPink text-xl md:text-2xl mb-6">what stayed with me after her talk...</h3>
+                
+                <div class="space-y-6 text-lg text-textDark leading-relaxed">
+                    <p class="editorial-p">
+                        There are those who navigate the academic space, and then there are those who actively shape how you perceive it. Çisem’s professional trajectory is deeply intertwined with the pedagogical landscape of our own department. Long before she was presenting her broader career insights to us as a guest speaker, she was in the trenches with us as a teaching assistant. 
+                    </p>
+                    <p>
+                        Some people don’t just critique; they unlock your brain. Back when I took studio with Proffessor Gurler, Çisem was assisting her, solidifying them as one of my absolute favorite academic duos. Even as an assistant, Çisem had incredibly strong ideas. She is that rare breed of educator who can look at a messy tracing paper draft, understand exactly where you are mentally stuck in the design process, and quietly shift your entire standard of thinking. Respectfully, no notes.
+                    </p>
+                </div>
+                
+                <p class="mt-10 font-serif italic text-primaryPink text-2xl">xoxo, landscape girl</p>
+            </article>
+
+            <div class="w-full h-[1px] bg-softPink"></div>
+
+            <!-- POST 2: Ebru Erbaş Gürler -->
+            <article class="relative pl-0 md:pl-12">
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-softPink hidden md:block"></div>
+                
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="bg-primaryPink text-white font-black uppercase tracking-[0.2em] text-sm px-4 py-2">Spotted:</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-textDark tracking-tight">Ebru Erbaş Gürler</h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">DIVA</span>
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">Landscape Designer</span>
+                </div>
+
+                <h3 class="font-serif italic text-darkPink text-xl md:text-2xl mb-6">what stayed with me after her talk...</h3>
+                
+                <div class="space-y-6 text-lg text-textDark leading-relaxed">
+                    <p class="editorial-p">
+                        The department knew exactly what it was doing when they brought her in. My very first studio was with Proffessor Gurler, and her style, presence, and command of the room were an education in themselves. She sets a tone that demands you take your own work seriously. But beyond the impeccable studio presence, it’s the professional lore she shared that really stays with you—a masterclass in the unglamorous realities of practice.
+                    </p>
+                    <p>
+                        Looks like her early career featured a classic landscape tragedy. She designed a garden for a family acquaintance, delivered the meticulous drawings, and then... lost contact. No payment ever came. Only later did she realize the client had simply taken her drawings and built the garden without her. And if that wasn’t enough of a lesson in the invisibility of our labor, there was another sighting: an architect who allegedly presented herself as a landscape architect, taking projects drawn by Ebru’s team and publishing them under her own name. Authorship in this field? Not to be dramatic, but it’s a battlefield.
+                    </p>
+                    <p class="font-medium bg-white p-6 mag-border border-l-4 border-l-primaryPink">
+                        Hearing these stories forces a reflection on the alternative paths our careers can take. It makes you realize how easily a trajectory can shift based on who you trust, and how we must learn just as fiercely from the stolen gardens as we do from the celebrated ones. A massive wave of gratitude to our speakers for dropping the facade and serving the reality check we all needed.
+                    </p>
+                </div>
+                
+                <p class="mt-10 font-serif italic text-primaryPink text-2xl">xoxo, landscape girl</p>
+            </article>
+
+            <div class="w-full h-[1px] bg-softPink"></div>
+
+            <!-- POST 3: Damla Turan -->
+            <article class="relative pl-0 md:pl-12">
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-softPink hidden md:block"></div>
+                
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="bg-primaryPink text-white font-black uppercase tracking-[0.2em] text-sm px-4 py-2">Spotted:</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-textDark tracking-tight">Damla Turan</h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">career sighting</span>
+                </div>
+
+                <h3 class="font-serif italic text-darkPink text-xl md:text-2xl mb-6">what stayed with me after her talk...</h3>
+                
+                <div class="space-y-6 text-lg text-textDark leading-relaxed">
+                    <p class="editorial-p">
+                        Navigating the post-grad world is less about waiting for the perfect job to appear and more about aggressively carving out your own footing. Damla's professional journey is a testament to the fact that career paths in landscape architecture are rarely linear; they require a constant, strategic recalibration of your skills and your environment.
+                    </p>
+                    <p>
+                        What stayed with me wasn't just the highlights reel of her resume, but the quiet, undeniable resilience required to make a name for yourself in rooms that are already full. She offered a look into the stamina it takes to endure the less glamorous phases of practice before you hit your stride. Lowkey iconic to just lay out the blueprint for survival like that.
+                    </p>
+                </div>
+                
+                <p class="mt-10 font-serif italic text-primaryPink text-2xl">xoxo, landscape girl</p>
+            </article>
+
+            <div class="w-full h-[1px] bg-softPink"></div>
+
+            <!-- POST 4: Gülce Kantürer -->
+            <article class="relative pl-0 md:pl-12">
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-softPink hidden md:block"></div>
+                
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="bg-primaryPink text-white font-black uppercase tracking-[0.2em] text-sm px-4 py-2">Spotted:</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-textDark tracking-tight">Gülce Kantürer</h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">studio note</span>
+                </div>
+
+                <h3 class="font-serif italic text-darkPink text-xl md:text-2xl mb-6">what stayed with me after her talk...</h3>
+                
+                <div class="space-y-6 text-lg text-textDark leading-relaxed">
+                    <p class="editorial-p">
+                        There is a specific art to translating a complex, multi-layered landscape into a digestible professional narrative, and Gülce’s trajectory proves she has mastered that translation. Her experiences highlight the critical intersection between deep, site-specific research and the realities of actually getting a project off the ground in the real world.
+                    </p>
+                    <p>
+                        Watching her dissect her process is a reminder that the best designs aren't merely drawn; they are thoroughly, unabashedly argued for. Her talk was a sharp reminder that your design is only as strong as your ability to defend it in a room full of skeptics. The ultimate power move.
+                    </p>
+                </div>
+                
+                <p class="mt-10 font-serif italic text-primaryPink text-2xl">xoxo, landscape girl</p>
+            </article>
+
+            <div class="w-full h-[1px] bg-softPink"></div>
+
+            <!-- POST 5: Dilara Kuş Şahin -->
+            <article class="relative pl-0 md:pl-12">
+                <div class="absolute left-0 top-0 h-full w-[2px] bg-softPink hidden md:block"></div>
+                
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="bg-primaryPink text-white font-black uppercase tracking-[0.2em] text-sm px-4 py-2">Spotted:</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-textDark tracking-tight">Dilara Kuş Şahin</h2>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-darkPink border border-darkPink px-3 py-1 rounded-full">professional reality</span>
+                </div>
+
+                <h3 class="font-serif italic text-darkPink text-xl md:text-2xl mb-6">what stayed with me after her talk...</h3>
+                
+                <div class="space-y-6 text-lg text-textDark leading-relaxed">
+                    <p class="editorial-p">
+                        Sometimes the pivot is infinitely more interesting than the original plan. Dilara’s candid insights into the daily grind of the profession manage to completely cut through the romanticized version of practice we are often fed in studio. She brings a grounded, pragmatic perspective that makes you immediately reconsider the logistics of your own five-year plan.
+                    </p>
+                    <p>
+                        Her reflections on balancing ambition with the actual, tangible demands of the industry were refreshing. It is one thing to dream up vast, conceptual master plans, and entirely another to execute them while navigating the mundane hurdles of professional life. We love a speaker who doesn't sugarcoat the process. 
+                    </p>
+                </div>
+                
+                <p class="mt-10 font-serif italic text-primaryPink text-2xl">xoxo, landscape girl</p>
+            </article>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t-4 border-primaryPink py-16 text-center mt-20">
+        <h2 class="text-4xl md:text-6xl font-serif italic text-darkPink font-medium mb-4">xoxo,</h2>
+        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter text-textDark">landscape girl</h3>
+        <p class="mt-8 text-sm uppercase tracking-widest text-primaryPink font-bold">PEM 422E &mdash; Professional Practice & Ethics</p>
+        <p class="mt-2 text-xs uppercase tracking-widest text-darkPink">CRN: 24544 &mdash; Instructors: Ebru Erbaş Gürler & Arzu Türk</p>
+        <p class="mt-4 text-xs font-bold tracking-widest text-textDark uppercase">Yusuf Emre Gürer &mdash; 020190540</p>
+    </footer>
+
+</body>
+</html>
