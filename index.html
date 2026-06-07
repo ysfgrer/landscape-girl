@@ -247,7 +247,9 @@
                 subtitle: "navigating the deep research",
                 imageUrl: "gulce-kanturer.jpeg",
                 body1: "Spotted in the deep waters of research-driven design. Her career trajectory suggests a refusal to accept easy answers, choosing instead to dive into the complexities of spatial politics and environmental resilience. She is the architect of layers, building her arguments as carefully as one might build a living shoreline.",
-                body2: "Her presence is academic yet piercingly grounded. She doesn't just talk about beauty; she talks about the 'necessity' of a space. It’s refreshing to see someone treat the landscape with such intellectual weight—slightly critical, deeply reflective, and entirely necessary."
+                body2: "Her presence is academic yet piercingly grounded. She doesn't just talk about beauty; she talks about the 'necessity' of a space. It’s refreshing to see someone treat the landscape with such intellectual weight—slightly critical, deeply reflective, and entirely necessary.",
+                extraImage: "gulce-kanturer-konusma.jpg",
+                extraImageCaption: "Spotted: Gülce sharing coastlines, layers, and spatial politics live at the IPA podium. Some people do not just critique; they command the room."
             },
             dilara: {
                 name: "dilara kuş şahin",
@@ -291,6 +293,13 @@
                     <p>
                         ${post.body2}
                     </p>
+                    
+                    ${post.extraImage ? `
+                        <div class="mt-12 pt-6 border-t border-[#fbcfe8] border-dashed">
+                            <img src="${post.extraImage}" class="w-full h-auto max-h-[500px] object-cover border border-[#fbcfe8] rounded-sm shadow-sm" alt="${post.name} konuşma">
+                            ${post.extraImageCaption ? `<p class="text-xs text-gray-400 italic mt-3 text-center tracking-wide font-light leading-relaxed">${post.extraImageCaption}</p>` : ''}
+                        </div>
+                    ` : ''}
                 </div>
                 
                 <div class="mt-20 pt-10 border-t border-[#fbcfe8]">
