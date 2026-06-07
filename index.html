@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landscape Girl xoxo | Professional Sightings</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
-        /* Tasarım Renk Paleti Tanımlamaları */
+        /* Design System Token Definitions */
         :root {
             --bg-pink: #fff7fb;
             --accent-pink: #f472b6;
@@ -31,7 +33,7 @@
             border-bottom: 1px solid var(--border-pink);
         }
         
-        /* Kartların geçiş ve gölge efektleri */
+        /* Card transition and depth dynamics */
         .post-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             background: white;
@@ -42,8 +44,18 @@
             box-shadow: 0 10px 30px -10px rgba(219, 39, 119, 0.15);
             border-color: var(--accent-pink);
         }
+
+        .dispatch-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--border-pink);
+        }
+        .dispatch-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px -10px rgba(219, 39, 119, 0.12);
+            border-color: var(--header-pink);
+        }
         
-        /* Navigasyon link çizgisi efekti */
+        /* Navigation border animation */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
@@ -84,7 +96,7 @@
 </head>
 <body class="antialiased selection:bg-pink-200">
 
-    <!-- Üst Navigasyon Menüsü -->
+    <!-- Header Navigation -->
     <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-[#fbcfe8]">
         <div class="max-w-5xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="cursor-pointer" onclick="showHome()">
@@ -93,6 +105,7 @@
             <nav class="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-bold">
                 <button onclick="showHome()" class="nav-link">Home</button>
                 <button onclick="scrollToSection('about-section')" class="nav-link">About</button>
+                <button onclick="scrollToSection('features-section')" class="nav-link">Site Visits</button>
                 <button onclick="scrollToSection('latest-sightings')" class="nav-link">Sightings</button>
             </nav>
         </div>
@@ -100,9 +113,9 @@
 
     <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
         
-        <!-- Ana Sayfa Görünümü -->
+        <!-- Main Homepage View -->
         <div id="home-view" class="fade-in">
-            <!-- Tanıtım Metni (Hero) -->
+            <!-- Hero Introduction -->
             <section class="mb-16 text-center md:text-left">
                 <p class="text-[11px] uppercase tracking-[0.3em] mb-4 accent-text font-bold">Volume 01: Professional Practice</p>
                 <h2 class="text-4xl md:text-5xl font-extrabold leading-[1.1] mb-8 header-text">
@@ -114,24 +127,51 @@
                 </p>
             </section>
 
-            <!-- Okul Orta Bahçe Görseli (Orta Yard Panoramic Banner) -->
+            <!-- Panoramic Banner (Orta Yard) -->
             <section class="mb-24">
                 <div class="relative overflow-hidden border border-[#fbcfe8] rounded-sm shadow-sm">
-                    <img src="orta-yard.jpg" alt="Okulun Orta Bahçesi - Orta Yard" class="w-full h-48 md:h-64 object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    <img src="orta-yard.jpg" alt="Central Courtyard" class="w-full h-48 md:h-64 object-cover grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
                 <p class="text-xs text-gray-400 italic mt-3 text-center tracking-wide font-light leading-relaxed">
-                    Spotted: The central courtyard (Orta Bahçe). The ultimate stage where design trace papers fly, coffee cup counts hit double digits, and everyone pretends they aren't listening to the next studio's jury drama.
+                    Spotted: The central courtyard. The ultimate stage where design trace papers fly, coffee cup counts hit double digits, and everyone pretends they aren't listening to the next studio's jury drama.
                 </p>
             </section>
 
-            <!-- Akış Listesi -->
+            <!-- Featured Site Visit Section -->
+            <section id="features-section" class="mb-24">
+                <div class="flex items-center justify-between mb-8 editorial-border pb-4">
+                    <h3 class="text-[12px] uppercase tracking-[0.3em] font-black header-text">Site Visit Special</h3>
+                    <span class="text-[10px] italic text-pink-400 font-bold uppercase tracking-wider">Active Site Report</span>
+                </div>
+
+                <div onclick="showPost('sitevisit')" class="dispatch-card bg-white p-6 md:p-8 rounded-sm cursor-pointer group flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-full md:w-1/3 flex-shrink-0">
+                        <img src="1.jpeg" alt="ESTA Construction Site Walk" class="w-full h-48 object-cover rounded-sm border border-[#fbcfe8]">
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-3">
+                                <span class="tag-spotted bg-pink-600">Site Walk Diary</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold">ESTA Active Site</span>
+                            </div>
+                            <h4 class="text-2xl font-extrabold group-hover:header-text transition-colors duration-300 leading-tight">Construction Walk: Decoding the Slab Landscape</h4>
+                            <p class="text-sm text-gray-600 mt-3 font-light leading-relaxed">
+                                Behind the gated entries of premium courtyards lies a complex engineering puzzle. We traded our studio tracing papers for boots and active realities at ESTA's residential construction site, uncovering the gaps between abstract drawing and physical materialization.
+                            </p>
+                        </div>
+                        <span class="text-xs font-bold text-pink-500 mt-6 block group-hover:translate-x-2 transition-transform duration-300">Read the active site walk report →</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Standard Sightings Feed (Speaker Series) -->
             <section id="latest-sightings" class="space-y-6">
                 <div class="flex items-center justify-between mb-10 editorial-border pb-4">
-                    <h3 class="text-[12px] uppercase tracking-[0.3em] font-black header-text">The Latest Feed</h3>
-                    <span class="text-[10px] italic text-gray-400">Updated: Studio Hours</span>
+                    <h3 class="text-[12px] uppercase tracking-[0.3em] font-black header-text">The Lecture Feed</h3>
+                    <span class="text-[10px] italic text-gray-400">Speaker Series Sightings</span>
                 </div>
                 
-                <!-- Çisem Demirel Koyun Kartı -->
+                <!-- Çisem Demirel Koyun -->
                 <div onclick="showPost('cisem')" class="post-card p-6 md:p-8 cursor-pointer group flex items-center space-x-6">
                     <div class="flex-shrink-0">
                         <img src="cisem-demirel.png" alt="Çisem Demirel Koyun" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-[#fbcfe8] group-hover:border-[#db2777] transition-all duration-300">
@@ -146,7 +186,7 @@
                     </div>
                 </div>
 
-                <!-- Damla Turan Kartı -->
+                <!-- Damla Turan -->
                 <div onclick="showPost('damla')" class="post-card p-6 md:p-8 cursor-pointer group flex items-center space-x-6">
                     <div class="flex-shrink-0">
                         <img src="damla-turan.avif" alt="Damla Turan" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-[#fbcfe8] group-hover:border-[#db2777] transition-all duration-300">
@@ -158,7 +198,7 @@
                     </div>
                 </div>
 
-                <!-- Gülce Kantürer Kartı -->
+                <!-- Gülce Kantürer -->
                 <div onclick="showPost('gulce')" class="post-card p-6 md:p-8 cursor-pointer group flex items-center space-x-6">
                     <div class="flex-shrink-0">
                         <img src="gulce-kanturer.jpeg" alt="Gülce Kantürer" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-[#fbcfe8] group-hover:border-[#db2777] transition-all duration-300">
@@ -170,7 +210,7 @@
                     </div>
                 </div>
 
-                <!-- Dilara Kuş Şahin Kartı -->
+                <!-- Dilara Kuş Şahin -->
                 <div onclick="showPost('dilara')" class="post-card p-6 md:p-8 cursor-pointer group flex items-center space-x-6">
                     <div class="flex-shrink-0">
                         <img src="dilara-kus-sahin.jpeg" alt="Dilara Kuş Şahin" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-[#fbcfe8] group-hover:border-[#db2777] transition-all duration-300">
@@ -182,7 +222,7 @@
                     </div>
                 </div>
 
-                <!-- Ebru Erbaş Gürler Kartı -->
+                <!-- Ebru Erbaş Gürler -->
                 <div onclick="showPost('ebru')" class="post-card p-6 md:p-8 cursor-pointer group flex items-center space-x-6">
                     <div class="flex-shrink-0">
                         <img src="ebru-erbas-gurler.jpeg" alt="Ebru Erbaş Gürler" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-[#fbcfe8] group-hover:border-[#db2777] transition-all duration-300">
@@ -198,7 +238,7 @@
                 </div>
             </section>
 
-            <!-- Hakkımızda Bölümü -->
+            <!-- Mission / About Section -->
             <section id="about-section" class="mt-32 p-10 bg-white border border-[#fbcfe8] rounded-sm">
                 <h3 class="text-[11px] uppercase tracking-[0.3em] font-black mb-6 header-text">The Mission</h3>
                 <p class="text-gray-800 font-light leading-relaxed mb-6">
@@ -210,20 +250,20 @@
             </section>
         </div>
 
-        <!-- Yazı Detay Görünümü (Tıklandığında açılır) -->
+        <!-- Detail Post / Dispatch View -->
         <div id="post-view" class="hidden fade-in">
             <button onclick="showHome()" class="text-[11px] uppercase tracking-[0.2em] mb-16 flex items-center font-bold hover:header-text transition-colors">
                 <span class="mr-2">←</span> Back to the feed
             </button>
             
             <div id="post-content">
-                <!-- Javascript ile doldurulacak dinamik içerik alanı -->
+                <!-- Injected dynamically by JS -->
             </div>
         </div>
 
     </main>
 
-    <!-- Alt Bilgi (Footer) -->
+    <!-- Footer -->
     <footer class="py-24 text-center border-t border-[#fbcfe8] bg-white">
         <p class="serif-italic text-2xl accent-text mb-6">xoxo, landscape girl</p>
         <div class="flex justify-center space-x-4 mb-8">
@@ -231,11 +271,11 @@
             <div class="w-1 h-1 bg-pink-300 rounded-full"></div>
             <div class="w-1 h-1 bg-pink-300 rounded-full"></div>
         </div>
-        <p class="text-[9px] uppercase tracking-[0.5em] text-gray-400">Final Project 2026 • Professional Practice & Ethics</p>
+        <p class="text-[9px] uppercase tracking-[0.5em] text-gray-400 font-bold">Final Project 2026 • Professional Practice & Ethics</p>
     </footer>
 
     <script>
-        // Tüm konuşmacı verileri ve yerel dosya yolları
+        // Data containing speakers info
         const posts = {
             cisem: {
                 name: "çisem demirel koyun",
@@ -278,8 +318,116 @@
             }
         };
 
-        // Detaylı yazı görünümünü oluşturup açan fonksiyon
+        // Render functions for routing
         function showPost(postId) {
+            if (postId === 'sitevisit') {
+                const content = `
+                    <div class="mb-12">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="tag-spotted bg-pink-600">Active Site Visit</span>
+                            <span class="text-[10px] uppercase tracking-widest text-pink-400 font-bold">Construction Walk</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold header-text leading-tight capitalize">site visit: the slab landscape</h1>
+                        <p class="text-lg serif-italic accent-text mt-2">what trace paper leaves behind on a live construction site</p>
+                    </div>
+                    
+                    <div class="space-y-12 text-gray-800 text-lg leading-relaxed font-light border-t border-[#fbcfe8] pt-10">
+                        <!-- Intro -->
+                        <p class="first-letter:text-5xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:header-text">
+                            We draw lines, we label plant palettes, and we hatch layers on our layout screens with ultimate confidence. But stepping onto ESTA's active construction site visit completely shatters the abstract bubble. Standing in the middle of a heavy-duty, noisy courtyard-under-construction is a masterclass in realization. For those of us who have yet to embark on a professional office internship, seeing these technical details materialize was the ultimate jaw-dropping epiphany.
+                        </p>
+
+                        <!-- Image 1 -->
+                        <div class="my-10 border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                            <img src="1.jpeg" class="w-full h-auto max-h-[500px] object-cover rounded-sm" alt="Active Construction Check">
+                            <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                <span class="font-bold header-text">Site Log #1:</span> Gearing up on the active construction site. Safety vests and hard hats might feel like a color-palette crisis in the design studio, but they carry absolute authority when stepping onto a live, shifting landscape layout.
+                            </p>
+                        </div>
+
+                        <!-- Metal Separator Section -->
+                        <h3 class="text-2xl font-extrabold header-text mt-8">The Material Edge: Metal Separators</h3>
+                        <p>
+                            In AutoCAD, a material divider is a mere vector line with zero thickness. In reality, it is a sturdy, physical metal separator. Seeing edge profiles and separators separating gravel borders from deep topsoil beds for the very first time was a quiet design revelation. They aren't just details; they are the literal anchors holding the visual composition from collapsing into mud.
+                        </p>
+
+                        <!-- Image 2 & 3 scattered -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+                            <div class="border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                                <img src="2.jpeg" class="w-full h-48 object-cover rounded-sm" alt="Soil depth on construction slab">
+                                <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                    <span class="font-bold header-text">Site Log #2:</span> Moving massive, heavy rootballs onto a concrete building slab. Realizing how structural loads dictate tree positions on a live construction site.
+                                </p>
+                            </div>
+                            <div class="border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                                <img src="3.jpeg" class="w-full h-48 object-cover rounded-sm" alt="Metal Separator close-up">
+                                <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                    <span class="font-bold header-text">Site Log #3:</span> The metal separator in action. A crisp CAD detail transformed into a physical, raw edge holding different material volumes together on-site.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Privacy & Ground Floor Protection Section -->
+                        <h3 class="text-2xl font-extrabold header-text mt-8">The Boundary of Privacy: Ground Floor Shrubbery</h3>
+                        <p>
+                            One of the most valuable moments of active site intelligence was observing the ground-floor residences. On layout trace sheets, we draw shrubs near boundaries and call it 'privacy design.' Standing there on the construction walk, I saw how carefully specified, dense evergreen shrub species actually form a gorgeous visual filter, completely protecting the private lives of residents from the eyes of people walking in the central courtyard.
+                        </p>
+
+                        <!-- Image 4 -->
+                        <div class="my-10 border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                            <img src="4.jpeg" class="w-full h-auto max-h-[500px] object-cover rounded-sm" alt="Privacy barrier layout">
+                            <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                <span class="font-bold header-text">Site Log #4:</span> The privacy shield. Watching the immediate spatial boundary created by ground-floor shrub arrangements. An elegant construction solution for real-world intimacy.
+                            </p>
+                        </div>
+
+                        <!-- Technical Realities of Courtyard Slabs -->
+                        <p>
+                            Designing on a concrete slab is fundamentally different from designing on natural earth. You are essentially building a series of massive, engineered flowerpots on top of occupied building spaces. Seeing the drainage layer installations, geotextile filters, and waterproofing details in their naked form on this active site visit was eye-opening. A single slope calculation error in the studio can lead to structural water leaks in real life.
+                        </p>
+
+                        <!-- Image 5 & 6 scattered -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+                            <div class="border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                                <img src="5.jpeg" class="w-full h-48 object-cover rounded-sm" alt="Insulation layering construction">
+                                <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                    <span class="font-bold header-text">Site Log #5:</span> Exposed structural insulation layers. The hidden construction architecture that keeps the slab dry and the trees alive.
+                                </p>
+                            </div>
+                            <div class="border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                                <img src="6.jpeg" class="w-full h-48 object-cover rounded-sm" alt="Active team coordination">
+                                <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                    <span class="font-bold header-text">Site Log #6:</span> Observing contractor hierarchies. Watching professional ethics, site management, and design intent collide on a live construction floor.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Internship-free Epiphanies and Final Verdict -->
+                        <h3 class="text-2xl font-extrabold header-text mt-8">The Professional Verdict</h3>
+                        <p>
+                            Not having completed an official internship yet, I used to think the design process ended at the final render submission. Seeing ESTA’s live execution made me realize that the *real* design dialogue begins when the boots touch the concrete. Witnessing how tree species are delivered, stabilized, and layered onto site structures has profoundly raised my standards for detailed technical drawings.
+                        </p>
+
+                        <!-- Image 7 -->
+                        <div class="my-10 border border-[#fbcfe8] bg-white p-4 rounded-sm shadow-sm">
+                            <img src="7.jpeg" class="w-full h-auto max-h-[500px] object-cover rounded-sm" alt="Active construction layout overview">
+                            <p class="text-xs text-gray-500 italic mt-3 text-center tracking-wide font-light">
+                                <span class="font-bold header-text">Site Log #7:</span> The final panorama. Heavy Machinery, raw materials, and the silent skeleton of what will soon be a premium, lush active courtyard landscape.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20 pt-10 border-t border-[#fbcfe8]">
+                        <p class="serif-italic text-2xl accent-text">xoxo, landscape girl</p>
+                    </div>
+                `;
+                document.getElementById('post-content').innerHTML = content;
+                document.getElementById('home-view').classList.add('hidden');
+                document.getElementById('post-view').classList.remove('hidden');
+                window.scrollTo(0, 0);
+                return;
+            }
+
             const post = posts[postId];
             const content = `
                 <div class="mb-12">
